@@ -8,7 +8,247 @@
     <link rel="icon" href="/favicon.ico">
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
-</head><body>
+</head>
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+    color: #f0f0f0;
+    overflow-x: hidden;
+}
+
+/* ===== Scrollbar Custom (Chrome) ===== */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+::-webkit-scrollbar-thumb {
+    background: #00c6ff;
+    border-radius: 20px;
+}
+
+/* ===== Header / Navbar ===== */
+header {
+    position: fixed;
+    width: 100%;
+    background: rgba(17, 17, 17, 0.95);
+    padding: 15px 50px;
+    z-index: 999;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #00c6ff;
+    letter-spacing: 1px;
+}
+
+.navbar {
+    display: flex;
+    gap: 30px;
+}
+
+.navbar a {
+    font-size: 1rem;
+    color: #ccc;
+    position: relative;
+}
+
+.navbar a::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #00c6ff;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.4s;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+.navbar a:hover {
+    color: #fff;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 30px;
+    background: radial-gradient(circle at 20% 30%, #00c6ff 5%, transparent 30%);
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    background: linear-gradient(90deg, #00c6ff, #00ffba);
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    color: #aaa;
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+/* ===== Button Keren Gege ===== */
+.btn {
+    background: linear-gradient(135deg, #00c6ff, #00ffba);
+    padding: 14px 30px;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    box-shadow: 0 5px 20px rgba(0, 198, 255, 0.4);
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 198, 255, 0.7);
+}
+
+/* ===== About Section ===== */
+.about {
+    padding: 100px 30px;
+    text-align: center;
+    background: #181818;
+}
+
+.about h2 {
+    font-size: 2.8rem;
+    color: #00c6ff;
+    margin-bottom: 20px;
+}
+
+.about p {
+    color: #ccc;
+    font-size: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* ===== Services (Card Professional) ===== */
+.services {
+    padding: 100px 30px;
+    background: #121212;
+}
+
+.services h2 {
+    text-align: center;
+    color: #00c6ff;
+    font-size: 2.8rem;
+    margin-bottom: 50px;
+}
+
+.service-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: linear-gradient(145deg, #1c1c1c, #121212);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.7);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, #00c6ff, transparent);
+    transform: rotate(0deg);
+    animation: rotate 8s linear infinite;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.card h3 {
+    color: #00ffba;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #aaa;
+    font-size: 0.95rem;
+}
+
+/* ===== Footer Stylish ===== */
+footer {
+    background: #111;
+    padding: 50px 30px;
+    text-align: center;
+    color: #777;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #00c6ff;
+}
+
+footer a:hover {
+    color: #00ffba;
+}
+
+/* ===== Responsive Full ===== */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+    }
+    .navbar {
+        gap: 15px;
+    }
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    .about h2, .services h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero p {
+        font-size: 1rem;
+    }
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    </style>
+    <body>
     <header>
         <nav>
             <a href="#home" class="logo">Hanami Cloud</a>
