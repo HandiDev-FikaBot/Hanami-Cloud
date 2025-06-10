@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="id">
+<!DOCTYPE html><html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -8,373 +7,83 @@
   <meta name="author" content="Hanami Dev"/>
   <title>Hanami Cloud | Digital Marketplace & Services</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
-    /* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Poppins', sans-serif;
-  background: #f4f4f4;
-  color: #333;
-  transition: background 0.3s, color 0.3s;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-ul {
-  list-style: none;
-}
-
-header {
-  background: #fff;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  position: sticky;
-  top: 0;
-  z-index: 999;
-}
-
-nav {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  font-weight: 700;
-  font-size: 1.5rem;
-  color: #4A00E0;
-}
-
-nav ul {
-  display: flex;
-  gap: 2rem;
-}
-
-nav a:hover {
-  color: #4A00E0;
-}
-
-#darkModeToggle {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 1.2rem;
-}
-
-/* Home */
-#home {
-  text-align: center;
-  padding: 8rem 2rem;
-  background: linear-gradient(to right, #8E2DE2, #4A00E0);
-  color: #fff;
-}
-
-#home h1 {
-  font-size: 2.8rem;
-  margin-bottom: 1rem;
-}
-
-#home h1 span {
-  color: #FFD700;
-}
-
-#home p {
-  max-width: 600px;
-  margin: 0 auto 2rem;
-  font-size: 1.1rem;
-}
-
-.btn {
-  background: #FFD700;
-  color: #4A00E0;
-  padding: 0.8rem 1.5rem;
-  border-radius: 50px;
-  font-weight: 600;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-  transition: 0.3s;
-}
-
-.btn:hover {
-  background: #fff;
-  color: #4A00E0;
-}
-
-/* Produk */
-#produk {
-  padding: 4rem 2rem;
-  max-width: 1100px;
-  margin: auto;
-}
-
-#produk h2 {
-  text-align: center;
-  margin-bottom: 2rem;
-  font-size: 2rem;
-  color: #4A00E0;
-}
-
-.produk-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-}
-
-.produk-item {
-  background: #fff;
-  padding: 2rem;
-  border-radius: 20px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-  text-align: center;
-  transition: transform 0.3s;
-}
-
-.produk-item:hover {
-  transform: translateY(-10px);
-}
-
-.produk-item h3 {
-  margin-bottom: 1rem;
-  color: #4A00E0;
-}
-
-/* Tentang & Kontak */
-#tentang, #kontak {
-  padding: 4rem 2rem;
-  max-width: 800px;
-  margin: auto;
-  text-align: center;
-}
-
-#tentang h2, #kontak h2 {
-  margin-bottom: 1rem;
-  color: #4A00E0;
-}
-
-footer {
-  text-align: center;
-  padding: 2rem 0;
-  background: #4A00E0;
-  color: #fff;
-}
-
-/* Animasi Scroll */
-section {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: 1s ease;
-}
-
-section.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Dark Mode */
-.dark-mode {
-  background: #121212;
-  color: #eee;
-}
-
-.dark-mode header, .dark-mode nav, .dark-mode .produk-item, .dark-mode footer {
-  background: #1e1e1e;
-  color: #fff;
-}
-
-.dark-mode .btn {
-  background: #FFD700;
-  color: #1e1e1e;
-}
-        .typing {
-      color: var(--accent);
-      font-weight: bold;
-      font-size: 1.5em;
-      height: 30px;
+    :root {
+      --primary: #4A00E0;
+      --accent: #FFD700;
+      --dark-bg: #121212;
+      --light-bg: #f4f4f4;
     }
-
-    .produk-section {
-      padding: 40px 20px;
-      max-width: 1100px;
-      margin: auto;
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--light-bg);
+      color: #333;
+      transition: background 0.4s, color 0.4s;
     }
-
-    .produk-section h2 {
-      text-align: center;
-      font-size: 2em;
-      margin-bottom: 30px;
+    header {
+      background: #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      position: sticky; top: 0; z-index: 999;
     }
-
-    .produk-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
+    nav {
+      max-width: 1200px; margin: auto; padding: 1rem 2rem;
+      display: flex; justify-content: space-between; align-items: center;
     }
-
-    .produk-card {
-      background-color: #1e1e1e;
-      border-radius: 15px;
-      padding: 20px;
-      box-shadow: 0 5px 20px rgba(0, 255, 204, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    .logo {
+      font-weight: 700; font-size: 1.5rem; color: var(--primary);
     }
-
-    .produk-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(0, 255, 204, 0.3);
+    nav ul { display: flex; gap: 2rem; list-style: none; }
+    nav a { text-decoration: none; color: inherit; transition: color 0.3s; }
+    nav a:hover { color: var(--primary); }
+    #home {
+      text-align: center; padding: 8rem 2rem;
+      background: linear-gradient(to right, #8E2DE2, var(--primary));
+      color: #fff;
+      animation: fadeIn 2s ease forwards;
     }
-
-    .produk-card i {
-      font-size: 2.5em;
-      color: var(--accent);
-      margin-bottom: 15px;
-    }
-
-    .produk-card h3 {
-      margin: 0;
-      color: var(--primary);
-      font-size: 1.3em;
-    }
-
-    .produk-card p {
-      color: #ccc;
-      margin: 10px 0 20px;
-      font-size: 0.95em;
-    }
-
+    #home h1 { font-size: 2.8rem; margin-bottom: 1rem; }
+    #home h1 span { color: var(--accent); }
+    #home p { max-width: 600px; margin: auto; font-size: 1.1rem; }
     .btn {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: var(--accent);
-      color: #000;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s;
+      background: var(--accent); color: var(--primary);
+      padding: 0.8rem 1.5rem; border-radius: 50px; font-weight: 600;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      transition: 0.4s; display: inline-block;
     }
-
     .btn:hover {
-      background-color: var(--primary);
-      color: #000;
+      background: #fff; color: var(--primary);
     }
-
+    section { opacity: 0; transform: translateY(50px); transition: 1s ease; }
+    section.show { opacity: 1; transform: translateY(0); }
+    .produk-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem; max-width: 1100px; margin: auto;
+    }
+    .produk-item {
+      background: #fff; padding: 2rem; border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+      text-align: center; transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .produk-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    }
     footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
-      color: #999;
+      text-align: center; padding: 2rem 0;
+      background: var(--primary); color: #fff;
     }
-
-    footer a {
-      color: var(--accent);
-      text-decoration: none;
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
     }
-      .unggulan-section {
-  padding: 50px 20px;
-  background: #101010;
-  text-align: center;
-}
-
-.unggulan-section h2 {
-  color: var(--primary);
-  font-size: 2.2em;
-  margin-bottom: 30px;
-}
-
-.unggulan-grid {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  flex-wrap: wrap;
-}
-
-.unggulan-card {
-  background-color: #1e1e1e;
-  border: 2px solid var(--accent);
-  border-radius: 15px;
-  padding: 25px;
-  width: 300px;
-  box-shadow: 0 0 20px rgba(0,255,204,0.2);
-  transition: all 0.3s ease;
-}
-
-.unggulan-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px rgba(0,255,204,0.4);
-}
-
-.unggulan-card i {
-  font-size: 3em;
-  margin-bottom: 15px;
-  color: var(--accent);
-}
-
-.unggulan-card h3 {
-  color: var(--primary);
-  font-size: 1.5em;
-  margin-bottom: 10px;
-}
-
-.unggulan-card p {
-  color: #ccc;
-  font-size: 0.95em;
-  margin-bottom: 20px;
-}
-    .info-section {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-  margin: 30px auto;
-  padding: 10px;
-  width: 90%;
-  max-width: 800px;
-  background: #1a1a1a;
-  border-radius: 15px;
-  box-shadow: 0 0 15px rgba(0,255,255,0.2);
-}
-
-.info-card {
-  background: #222;
-  padding: 15px 20px;
-  border-radius: 10px;
-  color: #fff;
-  min-width: 200px;
-  text-align: left;
-  font-size: 1.1em;
-  box-shadow: inset 0 0 5px #0f0, 0 0 5px #0ff;
-}
-      .tentang-section {
-  background-color: #0f0f0f;
-  color: #eee;
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.tentang-container {
-  max-width: 800px;
-  margin: auto;
-}
-
-.tentang-section h2 {
-  color: var(--primary);
-  font-size: 2.2em;
-  margin-bottom: 20px;
-}
-
-.tentang-section p {
-  font-size: 1em;
-  line-height: 1.8;
-  margin-bottom: 20px;
-  color: #ccc;
+    .dark-mode {
+      background: var(--dark-bg); color: #eee;
+    }
+    .dark-mode header, .dark-mode nav, .dark-mode .produk-item, .dark-mode footer {
+      background: #1e1e1e; color: #fff;
     }
   </style>
 </head>
@@ -387,184 +96,51 @@ section.show {
         <li><a href="#produk">Produk</a></li>
         <li><a href="#tentang">Tentang Kami</a></li>
         <li><a href="#kontak">Kontak</a></li>
-        <li><button id="darkModeToggle">🌙</button></li>
       </ul>
     </nav>
   </header>
-
-  <main>
-    <section id="home">
-      <h1>Selamat Datang di <span>Hanami Cloud</span></h1>
-      <p>Solusi terbaik untuk layanan VPS Hosting, Panel Pterodactyl, Server Minecraft, Jasa Bot WhatsApp, dan kebutuhan digital lainnya.</p>
-      <a href="#produk" class="btn">Lihat Produk</a>
-    </section>
-      <div class="left">
-      <h1>Hai, It's Handi</h1>
-      <h2>I'm a <span class="typing-text" id="typed"></span></h2>
-      <p>Saya adalah developer dari website Hanami Cloud dan penyedia jasa digital terpercaya.</p>
-    </div>
-    
-<div class="info-section">
-  <div class="info-card">
-    <strong>Today:</strong> <span id="today-date">Loading...</span>
-  </div>
-  <div class="info-card">
-    <strong>Digital Clock</strong> <span id="jamWIB" style="font-size: 20px; font-weight: bold;">Loading...</span>
-  </div>
-  <div class="info-card">
-    <strong>Your Battery:</strong> <span id="battery-status">Loading...</span>
-  </div>
-  <div class="info-card">
-    <strong>Your Region:</strong> <span id="user-region">Loading...</span>
-  </div>
-</div>
-      
-<section class="unggulan-section">
-  <h2>Produk Unggulan Kami</h2>
-  <div class="unggulan-grid">
-    <div class="unggulan-card">
-      <i class="fas fa-fire"></i>
-      <h3>Panel Bot WhatsApp</h3>
-      <p>Kelola bot WhatsApp, kamu bisa menggunakan script bot wa sendiri ataupun beli dari Fika Store.</p>
-      <a href="https://wa.me/6285800650661?text=Hai%20Handi!%20Saya%20ingin%20membeli%20panel%20bot" class="btn">Lihat Detail</a>
-    </div>
-    <div class="unggulan-card">
-      <i class="fas fa-shield-alt"></i>
-      <h3>VPS Premium</h3>
-      <p>Vps R1, C1 - R64, C32. Cocok untuk bot berat & server MC, dengan kecepatan dan uptime maksimal.</p>
-      <a href="https://wa.me/6285800650661?text=Hai%20Handi!%20Saya%20ingin%20membeli%20VPS%20premium" class="btn">Lihat Detail</a>
-    </div>
-    <div class="unggulan-card">
-      <i class="fas fa-mobile-alt"></i>
-      <h3>Nomor Kosong</h3>
-      <p>Nokos WhatsApp premium & reguler, cocok buat daftar/daur ulang bot & akun.</p>
-      <a href="https://wa.me/6285800650661?text=Hai%20Handi!%20Saya%20ingin%20membeli%20nokos" class="btn">Lihat Detail</a>
-    </div>
-  </div>
-</section>
-
-    <section id="produk">
-      <h2>Produk & Layanan</h2>
-      <div class="produk-container">
-        <div class="produk-item">
-          <h3>Panel Pterodactyl</h3>
-          <p>Instalasi panel server berkualitas untuk bot & server Minecraft Anda.</p>
-        </div>
-        <div class="produk-item">
-          <h3>VPS Hosting</h3>
-          <p>VPS murah, cepat, stabil untuk semua kebutuhan digital Anda.</p>
-        </div>
-        <div class="produk-item">
-          <h3>Server Minecraft & Bot</h3>
-          <p>Setup server Minecraft & WhatsApp Bot premium dengan plugin terbaik.</p>
-        </div>
-        <div class="produk-item">
-          <h3>Jasa Edit & Fitur Bot</h3>
-          <p>Kostumisasi script WhatsApp Bot sesuai kebutuhan Anda.</p>
-        </div>
+  <section id="home" class="show">
+    <h1>Selamat Datang di <span>Hanami Cloud</span></h1>
+    <p>Pusat layanan digital, hosting, panel Pterodactyl, dan solusi server terbaik di Indonesia.</p>
+    <a href="#produk" class="btn">Lihat Produk</a>
+  </section>
+  <section id="produk">
+    <h2 class="show">Produk Kami</h2>
+    <div class="produk-container show">
+      <div class="produk-item">
+        <h3>Panel Pterodactyl</h3>
+        <p>Kelola server game Anda dengan mudah & aman.</p>
       </div>
-    </section>
-
-    <section id="tentang">
-      <h2>Tentang Kami</h2>
-      <p>Hanami Cloud adalah penyedia layanan digital terpercaya di Indonesia, melayani VPS, Panel Pterodactyl, Server Bot, dan layanan digital lainnya dengan harga terjangkau & dukungan penuh.</p>
-    </section>
-
-    <section id="kontak">
-      <h2>Kontak Kami</h2>
-      <p>Email: <a href="mailto:cs@hanamicloud.id">cs@hanamicloud.id</a></p>
-      <p>WhatsApp: <a href="https://wa.me/6287717274346">6287717274346</a></p>
-    </section>
-  </main>
-
+      <div class="produk-item">
+        <h3>VPS Hosting</h3>
+        <p>VPS murah, cepat, dan full control untuk kebutuhan bisnis Anda.</p>
+      </div>
+      <div class="produk-item">
+        <h3>Jasa Bot</h3>
+        <p>Custom bot WhatsApp, Telegram, dan Discord sesuai keinginan Anda.</p>
+      </div>
+    </div>
+  </section>
+  <section id="tentang">
+    <h2 class="show">Tentang Kami</h2>
+    <p class="show">Hanami Cloud berkomitmen memberikan layanan digital berkualitas dengan harga terjangkau. Kami berpengalaman dalam solusi hosting, bot development, dan layanan server.</p>
+  </section>
+  <section id="kontak">
+    <h2 class="show">Hubungi Kami</h2>
+    <p class="show">Email: cs@hanamicloud.id | WhatsApp: 628123456789</p>
+  </section>
   <footer>
-    <p>&copy; 2025 Hanami Cloud | All rights reserved.</p>
+    <p>&copy; 2025 Hanami Cloud. All rights reserved.</p>
   </footer>
-
   <script>
-  // Format tanggal + hari lokal
-  const today = new Date();
-  const hari = ["Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu"];
-  const bulan = ["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"];
-  document.getElementById("today-date").textContent =
-    `${hari[today.getDay()]}, ${today.getDate()}-${today.getMonth()+1}-${today.getFullYear()}`;
-
-  // Battery info
-  navigator.getBattery().then(battery => {
-    function updateBatteryStatus() {
-      const level = Math.round(battery.level * 100) + "%";
-      document.getElementById("battery-status").textContent = level;
-    }
-    updateBatteryStatus();
-    battery.addEventListener("levelchange", updateBatteryStatus);
-  });
-
-  // Region detection
-      function updateJamWIB() {
-    const now = new Date();
-    // Konversi ke WIB (GMT+7)
-    const wib = new Date(now.getTime() + (7 * 60 * 60 * 1000));
-    const jam = String(wib.getUTCHours()).padStart(2, '0');
-    const menit = String(wib.getUTCMinutes()).padStart(2, '0');
-    const detik = String(wib.getUTCSeconds()).padStart(2, '0');
-    document.getElementById('jamWIB').textContent = `WIB: ${jam}:${menit}:${detik}`;
-  }
-
-  setInterval(updateJamWIB, 1000);
-  updateJamWIB();
-    
-  const region = Intl.DateTimeFormat().resolvedOptions().locale;
-  document.getElementById("user-region").textContent = region;
-  
-  const textList = ["Developer Website", "Designer", "Programmer", "Dev Server Mc"];
-    const typed = document.getElementById("typed");
-    let listIndex = 0;
-    let charIndex = 0;
-    let typing = true;
-
-    function typeEffect() {
-      const currentText = textList[listIndex];
-      if (typing) {
-        if (charIndex < currentText.length) {
-          typed.textContent += currentText.charAt(charIndex);
-          charIndex++;
-          setTimeout(typeEffect, 100);
-        } else {
-          typing = false;
-          setTimeout(typeEffect, 1500);
-        }
-      } else {
-        if (charIndex > 0) {
-          typed.textContent = currentText.substring(0, charIndex - 1);
-          charIndex--;
-          setTimeout(typeEffect, 50);
-        } else {
-          typing = true;
-          listIndex = (listIndex + 1) % textList.length;
-          setTimeout(typeEffect, 500);
-        }
-      }
-    }
-
-    typeEffect();
- 
-    // year update
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    const toggle = document.getElementById('darkModeToggle');
-    toggle.addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-    });
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting){
-          entry.target.classList.add('show');
-        }
+    const sections = document.querySelectorAll('section');
+    window.addEventListener('scroll', () => {
+      const trigger = window.innerHeight / 1.2;
+      sections.forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if(top < trigger) sec.classList.add('show');
       });
     });
-
-    document.querySelectorAll('section').forEach(sec => observer.observe(sec));
   </script>
 </body>
 </html>
