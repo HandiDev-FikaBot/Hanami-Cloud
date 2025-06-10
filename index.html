@@ -1,0 +1,86 @@
+<!DOCTYPE html><html lang="id"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hanami Cloud | Jasa Panel Pterodactyl, VPS Hosting, dan Digital Services Terpercaya">
+    <meta name="keywords" content="Hanami Cloud, Hanami Dev, Handi Dev, Pterodactyl Panel, VPS Murah, Hosting, Jasa Install, Jasa Edit Bot, Jasa Tambah Fitur, Server Minecraft, Server Bot, Digital Services Indonesia">
+    <meta name="author" content="Hanami Dev">
+    <title>Hanami Cloud | Digital Marketplace & Services</title>
+    <link rel="icon" href="/favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head><body>
+    <header>
+        <nav>
+            <a href="#home" class="logo">Hanami Cloud</a>
+            <ul>
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#produk">Produk</a></li>
+                <li><a href="#tentang">Tentang Kami</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+                <li><button id="darkModeToggle">🌙</button></li>
+            </ul>
+        </nav>
+    </header><main>
+    <section id="home">
+        <h1>Selamat Datang di Hanami Cloud</h1>
+        <p>Solusi terbaik untuk layanan VPS Hosting, Panel Pterodactyl, Server Minecraft, Jasa Bot WhatsApp, dan Layanan Digital lainnya.</p>
+        <a href="#produk" class="btn">Lihat Produk</a>
+    </section>
+
+    <section id="produk">
+        <h2>Produk & Layanan</h2>
+        <div class="produk-item">
+            <h3>Panel Pterodactyl</h3>
+            <p>Instalasi panel server berkualitas untuk kebutuhan bot & Minecraft server Anda.</p>
+        </div>
+        <div class="produk-item">
+            <h3>VPS Hosting</h3>
+            <p>VPS murah, cepat, dan stabil untuk segala keperluan digital Anda.</p>
+        </div>
+        <div class="produk-item">
+            <h3>Server Minecraft & Bot</h3>
+            <p>Setup server Minecraft & bot WhatsApp premium dengan dukungan plugin terbaik.</p>
+        </div>
+        <div class="produk-item">
+            <h3>Jasa Edit & Tambah Fitur Bot</h3>
+            <p>Kostumisasi script bot WhatsApp sesuai kebutuhan Anda.</p>
+        </div>
+    </section>
+
+    <section id="tentang">
+        <h2>Tentang Kami</h2>
+        <p>Hanami Cloud (alias Hanami Dev / Handi Dev) adalah penyedia layanan digital terpercaya di Indonesia, melayani VPS, Panel Pterodactyl, Server Bot, dan berbagai kebutuhan digital lainnya dengan harga terjangkau dan dukungan penuh.</p>
+    </section>
+
+    <section id="kontak">
+        <h2>Kontak Kami</h2>
+        <p>Email: cs@hanamicloud.id</p>
+        <p>WhatsApp: <a href="https://wa.me/6287717274346">6287717274346</a></p>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 Hanami Cloud | All rights reserved.</p>
+</footer>
+
+<script>
+    const toggle = document.getElementById('darkModeToggle');
+    toggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+    });
+
+    // Scroll Animation
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                entry.target.classList.add('show');
+            }
+        });
+    });
+
+    document.querySelectorAll('section').forEach(sec => {
+        observer.observe(sec);
+    });
+</script>
+
+</body></html>
