@@ -194,6 +194,188 @@ section.show {
   background: #FFD700;
   color: #1e1e1e;
 }
+        .typing {
+      color: var(--accent);
+      font-weight: bold;
+      font-size: 1.5em;
+      height: 30px;
+    }
+
+    .produk-section {
+      padding: 40px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .produk-section h2 {
+      text-align: center;
+      font-size: 2em;
+      margin-bottom: 30px;
+    }
+
+    .produk-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .produk-card {
+      background-color: #1e1e1e;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 5px 20px rgba(0, 255, 204, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .produk-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 255, 204, 0.3);
+    }
+
+    .produk-card i {
+      font-size: 2.5em;
+      color: var(--accent);
+      margin-bottom: 15px;
+    }
+
+    .produk-card h3 {
+      margin: 0;
+      color: var(--primary);
+      font-size: 1.3em;
+    }
+
+    .produk-card p {
+      color: #ccc;
+      margin: 10px 0 20px;
+      font-size: 0.95em;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: var(--accent);
+      color: #000;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background-color: var(--primary);
+      color: #000;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #999;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+      .unggulan-section {
+  padding: 50px 20px;
+  background: #101010;
+  text-align: center;
+}
+
+.unggulan-section h2 {
+  color: var(--primary);
+  font-size: 2.2em;
+  margin-bottom: 30px;
+}
+
+.unggulan-grid {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.unggulan-card {
+  background-color: #1e1e1e;
+  border: 2px solid var(--accent);
+  border-radius: 15px;
+  padding: 25px;
+  width: 300px;
+  box-shadow: 0 0 20px rgba(0,255,204,0.2);
+  transition: all 0.3s ease;
+}
+
+.unggulan-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(0,255,204,0.4);
+}
+
+.unggulan-card i {
+  font-size: 3em;
+  margin-bottom: 15px;
+  color: var(--accent);
+}
+
+.unggulan-card h3 {
+  color: var(--primary);
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.unggulan-card p {
+  color: #ccc;
+  font-size: 0.95em;
+  margin-bottom: 20px;
+}
+    .info-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin: 30px auto;
+  padding: 10px;
+  width: 90%;
+  max-width: 800px;
+  background: #1a1a1a;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0,255,255,0.2);
+}
+
+.info-card {
+  background: #222;
+  padding: 15px 20px;
+  border-radius: 10px;
+  color: #fff;
+  min-width: 200px;
+  text-align: left;
+  font-size: 1.1em;
+  box-shadow: inset 0 0 5px #0f0, 0 0 5px #0ff;
+}
+      .tentang-section {
+  background-color: #0f0f0f;
+  color: #eee;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.tentang-container {
+  max-width: 800px;
+  margin: auto;
+}
+
+.tentang-section h2 {
+  color: var(--primary);
+  font-size: 2.2em;
+  margin-bottom: 20px;
+}
+
+.tentang-section p {
+  font-size: 1em;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: #ccc;
+    }
   </style>
 </head>
 <body>
@@ -219,7 +401,7 @@ section.show {
       <div class="left">
       <h1>Hai, It's Handi</h1>
       <h2>I'm a <span class="typing-text" id="typed"></span></h2>
-      <p>Saya adalah developer dari website Fika Store dan penyedia jasa digital terpercaya.</p>
+      <p>Saya adalah developer dari website Hanami Cloud dan penyedia jasa digital terpercaya.</p>
     </div>
     
 <div class="info-section">
@@ -300,6 +482,75 @@ section.show {
   </footer>
 
   <script>
+  // Format tanggal + hari lokal
+  const today = new Date();
+  const hari = ["Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu"];
+  const bulan = ["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"];
+  document.getElementById("today-date").textContent =
+    `${hari[today.getDay()]}, ${today.getDate()}-${today.getMonth()+1}-${today.getFullYear()}`;
+
+  // Battery info
+  navigator.getBattery().then(battery => {
+    function updateBatteryStatus() {
+      const level = Math.round(battery.level * 100) + "%";
+      document.getElementById("battery-status").textContent = level;
+    }
+    updateBatteryStatus();
+    battery.addEventListener("levelchange", updateBatteryStatus);
+  });
+
+  // Region detection
+      function updateJamWIB() {
+    const now = new Date();
+    // Konversi ke WIB (GMT+7)
+    const wib = new Date(now.getTime() + (7 * 60 * 60 * 1000));
+    const jam = String(wib.getUTCHours()).padStart(2, '0');
+    const menit = String(wib.getUTCMinutes()).padStart(2, '0');
+    const detik = String(wib.getUTCSeconds()).padStart(2, '0');
+    document.getElementById('jamWIB').textContent = `WIB: ${jam}:${menit}:${detik}`;
+  }
+
+  setInterval(updateJamWIB, 1000);
+  updateJamWIB();
+    
+  const region = Intl.DateTimeFormat().resolvedOptions().locale;
+  document.getElementById("user-region").textContent = region;
+  
+  const textList = ["Developer Website", "Designer", "Programmer", "Dev Server Mc"];
+    const typed = document.getElementById("typed");
+    let listIndex = 0;
+    let charIndex = 0;
+    let typing = true;
+
+    function typeEffect() {
+      const currentText = textList[listIndex];
+      if (typing) {
+        if (charIndex < currentText.length) {
+          typed.textContent += currentText.charAt(charIndex);
+          charIndex++;
+          setTimeout(typeEffect, 100);
+        } else {
+          typing = false;
+          setTimeout(typeEffect, 1500);
+        }
+      } else {
+        if (charIndex > 0) {
+          typed.textContent = currentText.substring(0, charIndex - 1);
+          charIndex--;
+          setTimeout(typeEffect, 50);
+        } else {
+          typing = true;
+          listIndex = (listIndex + 1) % textList.length;
+          setTimeout(typeEffect, 500);
+        }
+      }
+    }
+
+    typeEffect();
+ 
+    // year update
+    document.getElementById("year").textContent = new Date().getFullYear();
+
     const toggle = document.getElementById('darkModeToggle');
     toggle.addEventListener('click', () => {
       document.body.classList.toggle('dark-mode');
